@@ -4,6 +4,7 @@ using Unity.Mathematics;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -55,7 +56,7 @@ public class PlayerController : MonoBehaviour
                 MoveCamera();
 
                 //Look At Mouse
-                LookAtMouse();
+                //LookAtMouse();
 
                 //Move Player
                 Move();
@@ -88,15 +89,59 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void LookAtMouse()
+    //private void LookAtMouse()
+    //{
+    //    Vector2 mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    //    transform.up = (Vector3)(mousePos - new Vector2(transform.position.x, transform.position.y));
+    //}
+
+    private void RotatePlayer(Vector2 _wasdInput)
     {
-        Vector2 mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.up = (Vector3)(mousePos - new Vector2(transform.position.x, transform.position.y));
+        float x = _wasdInput.x;
+        float y = _wasdInput.y;
+
+        if (x == 0 && y == 1)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0.0f);
+        }
+        else if (x == 1 && y == 1)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, -45.0f);
+        }
+        else if (x == 1 && y == 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, -90.0f);
+        }
+        else if (x == 1 && y == -1)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, -135.0f);
+        }
+        else if (x == 0 && y == -1)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, -180.0f);
+        }
+        else if (x == -1 && y == -1)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, -225.0f);
+        }
+        else if (x == -1 && y == 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, -270.0f);
+        }
+        else if (x == -1 && y == 1)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, -315.0f);
+        }
+
     }
 
     private void Move()
     {
+        //Get WASD Input
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        //Rotate Plater
+        RotatePlayer(input);
 
         //Sprint and Decrease Stamina
         if (Sprint() && stamina > 0)
