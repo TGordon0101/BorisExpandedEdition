@@ -17,6 +17,8 @@ public class AI : MonoBehaviour
     public Animator AI_Animation;
 
     public bool AI_Chase;
+    public float Distance;
+    public float SearchTimer;
 
    // public AudioSource SoundEffect;
 
@@ -30,25 +32,38 @@ public class AI : MonoBehaviour
         GameManager_Obj = GameObject.Find("GameTrigger").GetComponent<GameManager>();
         AI_Obj = GameObject.FindGameObjectWithTag("Enemy");
 
-        AI_Chase = false;
+        AI_Chase = true;
 
         //SoundEffect = GetComponent<AudioSource>();
+        AI_Origin = AI_Obj.transform.position;
+
+        SearchTimer = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
-        AI_Origin = this.transform.position;
+        Distance = Vector3.Distance(AI_Obj.transform.position, Player_Obj.transform.position);
 
-        if (AI_Chase == true && GameManager_Obj.b_GameEnd == false && PlayerController_Obj.b_playerDead == false) {
-            Target_Position = Player_Obj.transform.position;
+        //AI_Origin = this.transform.position;
 
-            Monster_AI_Mesh.SetDestination(new Vector3(Target_Position.x, Target_Position.y, 1));
-            AI_Animation.SetFloat("Speed", 1.0f);
+        if (Distance > 25.0f)
+        {
+            Search();
         }
+        else if (Distance < 25.0f) {
+            SearchTimer = 10;
+            ChasePlayer();
+        }
+
         else {
             AI_Animation.SetFloat("Speed", 0.0f);
             PlaySound();
+        }
+
+        if (SearchTimer == 0.0f)
+        {
+            Wander();
         }
 
         Vector3 diff = Player_Obj.transform.position - transform.position;
@@ -76,5 +91,32 @@ public class AI : MonoBehaviour
         {
             PlayerController_Obj.Die();
         }
+    }
+
+    private void ChasePlayer()
+    {
+        Target_Position = Player_Obj.transform.position;
+        Monster_AI_Mesh.SetDestination(new Vector3(Target_Position.x, Target_Position.y, 1));
+        AI_Animation.SetFloat("Speed", 1.0f);
+    }
+
+    private void Search()
+    {
+        if(SearchTimer > 0.0f)
+        {
+            SearchTimer -= Time.deltaTime;
+            Monster_AI_Mesh.SetDestination(new Vector3(AI_Obj.transform.position.x, AI_Obj.transform.position.y, 1));
+            AI_Animation.SetFloat("Speed", 0.0f);
+        }
+        else
+        {
+            SearchTimer = 0.0f;
+        }
+    }
+
+    private void Wander()
+    {
+        Monster_AI_Mesh.SetDestination(new Vector3(AI_Origin.x, AI_Origin.y, 1));
+        AI_Animation.SetFloat("Speed", 1.0f);
     }
 }

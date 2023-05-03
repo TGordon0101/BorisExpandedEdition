@@ -18,7 +18,7 @@ public class Door : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            Debug.Log("Player Hit Door");
+            //Debug.Log("Player Hit Door");
         }
     }
 
@@ -26,7 +26,7 @@ public class Door : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            Debug.Log("Player Exit Door");
+            //Debug.Log("Player Exit Door");
         }
 
     }
