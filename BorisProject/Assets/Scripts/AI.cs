@@ -5,16 +5,18 @@ using UnityEngine.AI;
 
 public class AI : MonoBehaviour
 {
-    public GameObject Player_Obj;
     public PlayerController PlayerController_Obj;
     public GameManager GameManager_Obj;
+
+    public GameObject Player_Obj;
     public GameObject AI_Obj;
 
     public Vector3 Target_Position;
-    public Vector3 AI_Origin;
-    public NavMeshAgent Monster_AI_Mesh;
+    public Transform Location_Position;
 
+    public NavMeshAgent Monster_AI_Mesh;
     public Animator AI_Animation;
+    public AILocation Locations_List;
 
     public bool AI_Chase;
     public float Distance;
@@ -22,7 +24,6 @@ public class AI : MonoBehaviour
 
    // public AudioSource SoundEffect;
 
-    // Start is called before the first frame update
     void Start()
     {
         Monster_AI_Mesh = GetComponent<NavMeshAgent>();
@@ -31,21 +32,19 @@ public class AI : MonoBehaviour
         PlayerController_Obj = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         GameManager_Obj = GameObject.Find("GameTrigger").GetComponent<GameManager>();
         AI_Obj = GameObject.FindGameObjectWithTag("Enemy");
+        Locations_List = GameObject.Find("Travel Locations").GetComponent<AILocation>();
 
         AI_Chase = true;
 
         //SoundEffect = GetComponent<AudioSource>();
-        AI_Origin = AI_Obj.transform.position;
 
         SearchTimer = 10;
+        Location_Position = Locations_List.GetLocation();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Distance = Vector3.Distance(AI_Obj.transform.position, Player_Obj.transform.position);
-
-        //AI_Origin = this.transform.position;
 
         if (Distance > 25.0f)
         {
@@ -116,7 +115,14 @@ public class AI : MonoBehaviour
 
     private void Wander()
     {
-        Monster_AI_Mesh.SetDestination(new Vector3(AI_Origin.x, AI_Origin.y, 1));
+        Monster_AI_Mesh.SetDestination(Location_Position.position);
+        float Dis = Vector3.Distance(Location_Position.position, AI_Obj.transform.position);
+
+        if (Dis < 7.0f)
+        {
+            Location_Position = Locations_List.GetLocation();
+        }
+
         AI_Animation.SetFloat("Speed", 1.0f);
     }
 }
