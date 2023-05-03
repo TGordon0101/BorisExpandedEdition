@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main_Menu.unity
+    path: Assets/SCENES/Game/Main_Menu.unity
     guid: f047ace7dfad465498f6d73e263c5749
   - enabled: 1
-    path: Assets/Scenes/Thomas/FINAL GAME.unity
+    path: Assets/SCENES/Game/FINAL GAME.unity
     guid: 7faaae2926c058340b19cf1ec111636d
   - enabled: 0
     path: Assets/Scenes/The_Game/The_Game.unity
