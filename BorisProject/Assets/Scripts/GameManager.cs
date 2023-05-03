@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Player_Obj = GameObject.Find("Player");
-        m_lightManager = GameObject.Find("LightManager 1").GetComponent<LightManager>();
+        m_lightManager = GameObject.Find("Light Manager").GetComponent<LightManager>();
         AmbientMusic.Play();
     }
 
