@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5b5778e322f61a847bdd03962a9b5130
+guid: 2febd257f0030b747a0d90b9ca8194e2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,35 +101,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Detective_DeathSheet_0
+      name: Anim_player_pickUp_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26c7028158a9d4247b6a6e2d1928389b
-      internalID: 1061940965
+      spriteID: c6258c50e2a455143a4746b4e65aee7c
+      internalID: 740348699
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Detective_DeathSheet_1
+      name: Anim_player_pickUp_1
       rect:
         serializedVersion: 2
         x: 512
@@ -164,14 +140,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdcaf82906fe92243a08e952dbc6c480
-      internalID: -949527251
+      spriteID: f9d87696141728d469fd142ee4a81777
+      internalID: -546727102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Detective_DeathSheet_2
+      name: Anim_player_pickUp_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2d054f30b9ec5047964fb949d97bf25
+      internalID: 1655014076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_player_pickUp_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bca8cf42f2dcb0646a41b6d0a11dd7c1
+      internalID: -1595269612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_player_pickUp_4
       rect:
         serializedVersion: 2
         x: 0
@@ -185,8 +203,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a611aa3db43bd4498db9a954c6a5b04
-      internalID: 323047739
+      spriteID: ba1dcbb2e7ffb9d4ca5b016badabbabc
+      internalID: -1435980761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_player_pickUp_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d429b05b0a1c6fa4a87434076c77e956
+      internalID: -984889739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_player_pickUp_6
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c0a91e24d0d11d4b93fb8cb9f6d26d4
+      internalID: 685726000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_player_pickUp_7
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 325c931c751b14e438c19c131cfc0e9c
+      internalID: 808877430
       vertices: []
       indices: 
       edges: []
@@ -202,9 +283,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Detective_DeathSheet_1: -949527251
-      Detective_DeathSheet_2: 323047739
-      Detective_DeathSheet_0: 1061940965
+      Anim_player_pickUp_5: -984889739
+      Anim_player_pickUp_4: -1435980761
+      Anim_player_pickUp_0: 740348699
+      Anim_player_pickUp_1: -546727102
+      Anim_player_pickUp_7: 808877430
+      Anim_player_pickUp_3: -1595269612
+      Anim_player_pickUp_6: 685726000
+      Anim_player_pickUp_2: 1655014076
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
