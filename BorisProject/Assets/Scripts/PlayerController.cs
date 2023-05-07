@@ -8,17 +8,18 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] public Object itemOne;
+    [SerializeField] public Object itemTwo;
+    [SerializeField] public Object itemThree;
+
     public float moveSpeed;
     public bool b_playerDead = false;
 
     [SerializeField] private float stamina;
     [SerializeField] private float maxStamina;
 
-
     private Rigidbody2D body;
     //public UIScript UI_Obj;
-    //public GameObject Pause_Obj;
-    //public PauseScript Pause_Script;
     //public GameManager GM_Obj;
     public AudioSource PlayerSound;
 
@@ -33,22 +34,12 @@ public class PlayerController : MonoBehaviour
         stamina = maxStamina;
         //UI_Obj = GameObject.Find("EndGameCanvas").GetComponent<UIScript>();
         //GM_Obj = GameObject.Find("GameTrigger").GetComponent<GameManager>();
-        //Pause_Obj = GameObject.Find("Pause Canvas");
-        //Pause_Script = GameObject.Find("Pause Canvas").GetComponent<PauseScript>();
-
-        //Pause_Obj.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Time.timeScale != 0)
         {
-            if (b_playerDead == true)
-            {
-                //UI_Obj.YouLose();
-            }
-
             //Player Movement
             if (b_playerDead == false /*&& GM_Obj.b_GameEnd == false*/)
             {
@@ -79,13 +70,6 @@ public class PlayerController : MonoBehaviour
                 PlayerAnimation.SetFloat("Speed", 0);
                 PlayerSound.Play();
             }
-
-            //if (Input.GetKeyDown(KeyCode.Escape)) {
-            //    Pause_Script.PauseGame();
-            //    Pause_Obj.SetActive(true);
-
-            //    PlayerSound.Pause();
-            //}
         }
     }
 
@@ -192,5 +176,51 @@ public class PlayerController : MonoBehaviour
     {
         PlayerAnimation.SetBool("Death", true);
         b_playerDead = true;
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Monster")
+        {
+            //Die();
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Object")
+        {
+            // Check invetneory function
+            CheckInventory(collision.gameObject.GetComponent<Object>());
+        }
+    }
+
+    private void CheckInventory(Object _object)
+    {
+        // Check if item is already in inventory
+        if (_object != itemOne && _object != itemTwo && _object != itemThree)
+        {
+            // if the item in slot one is null, set collided object to first slot
+            // Repeat for all three slots
+            if (itemOne == null)
+            {
+                itemOne = _object;
+            }
+
+            else if (itemTwo == null)
+            {
+                itemTwo = _object;
+            }
+
+            else if (itemThree == null)
+            {
+                itemThree = _object;
+            }
+
+            else
+            {
+                Debug.Log("Did not pick up");
+            }
+        }
     }
 }

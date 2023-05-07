@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private LightManager m_lightManager;
     public GameObject Player_Obj;
     public AI AI_Script_Obj;
+    public Trap Trap_obj;
+    public UIScript UI_obj;
 
     public AudioSource AmbientMusic;
     public AudioSource ChaseMusic;
@@ -20,8 +22,20 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Player_Obj = GameObject.Find("Player");
-        m_lightManager = GameObject.Find("Light Manager").GetComponent<LightManager>();
+        m_lightManager = GameObject.Find("LightManager 1").GetComponent<LightManager>();
+        Trap_obj = GameObject.Find("Summon Trap").GetComponent<Trap>();
+        UI_obj = GameObject.Find("EndGameCanvas").GetComponent<UIScript>();
+
         AmbientMusic.Play();
+    }
+
+    public void Update()
+    {
+        if (Trap_obj.endGame == true)
+        {
+            UI_obj.YouWin_Obj.SetActive(true);
+            UI_obj.Buttons_Obj.SetActive(true);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col)

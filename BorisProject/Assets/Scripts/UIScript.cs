@@ -9,14 +9,11 @@ public class UIScript : MonoBehaviour
     public GameObject YouLose_Obj;
     public GameObject Buttons_Obj;
 
-    public GameManager GM_Obj;
-
     void Start()
     {
         YouWin_Obj = GameObject.Find("You Win Text");
         YouLose_Obj = GameObject.Find("You Lose Text");
         Buttons_Obj = GameObject.Find("Buttons");
-        GM_Obj = GameObject.Find("GameTrigger").GetComponent<GameManager>();
 
        // UI_Obj.SetActive(false);
         YouWin_Obj.SetActive(false);
@@ -24,15 +21,6 @@ public class UIScript : MonoBehaviour
         Buttons_Obj.SetActive(false);
     }
 
-
-    void Update()
-    {
-        if(GM_Obj.b_GameEnd == true)
-        {
-            YouWin_Obj.SetActive(true);
-            Buttons_Obj.SetActive(true);
-        }
-    }
 
     public void RetryGame()
     {

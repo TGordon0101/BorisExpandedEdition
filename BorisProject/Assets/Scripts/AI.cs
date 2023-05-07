@@ -5,11 +5,7 @@ using UnityEngine.AI;
 
 public class AI : MonoBehaviour
 {
-    public PlayerController PlayerController_Obj;
-    public GameManager GameManager_Obj;
-
     public GameObject Player_Obj;
-    public GameObject AI_Obj;
 
     public Vector3 Target_Position;
     public Transform Location_Position;
@@ -27,11 +23,8 @@ public class AI : MonoBehaviour
     void Start()
     {
         Monster_AI_Mesh = GetComponent<NavMeshAgent>();
-
         Player_Obj = GameObject.FindGameObjectWithTag("Player");
-        PlayerController_Obj = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        GameManager_Obj = GameObject.Find("GameTrigger").GetComponent<GameManager>();
-        AI_Obj = GameObject.FindGameObjectWithTag("Enemy");
+        Location_Position = GameObject.Find("Location 3").GetComponent<Transform>();
         Locations_List = GameObject.Find("Travel Locations").GetComponent<AILocation>();
 
         AI_Chase = true;
@@ -39,12 +32,11 @@ public class AI : MonoBehaviour
         //SoundEffect = GetComponent<AudioSource>();
 
         SearchTimer = 10;
-        Location_Position = Locations_List.GetLocation();
     }
 
     void Update()
     {
-        Distance = Vector3.Distance(AI_Obj.transform.position, Player_Obj.transform.position);
+        Distance = Vector3.Distance(this.transform.position, Player_Obj.transform.position);
 
         if (Distance > 25.0f)
         {
@@ -54,7 +46,6 @@ public class AI : MonoBehaviour
             SearchTimer = 10;
             ChasePlayer();
         }
-
         else {
             AI_Animation.SetFloat("Speed", 0.0f);
             PlaySound();
@@ -84,14 +75,6 @@ public class AI : MonoBehaviour
         //SoundEffect.Play();
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.name == "Player")
-        {
-            PlayerController_Obj.Die();
-        }
-    }
-
     private void ChasePlayer()
     {
         Target_Position = Player_Obj.transform.position;
@@ -104,7 +87,7 @@ public class AI : MonoBehaviour
         if(SearchTimer > 0.0f)
         {
             SearchTimer -= Time.deltaTime;
-            Monster_AI_Mesh.SetDestination(new Vector3(AI_Obj.transform.position.x, AI_Obj.transform.position.y, 1));
+            Monster_AI_Mesh.SetDestination(new Vector3(this.transform.position.x, this.transform.position.y, 1));
             AI_Animation.SetFloat("Speed", 0.0f);
         }
         else
@@ -116,7 +99,7 @@ public class AI : MonoBehaviour
     private void Wander()
     {
         Monster_AI_Mesh.SetDestination(Location_Position.position);
-        float Dis = Vector3.Distance(Location_Position.position, AI_Obj.transform.position);
+        float Dis = Vector3.Distance(Location_Position.position, this.transform.position);
 
         if (Dis < 7.0f)
         {
