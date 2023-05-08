@@ -108,4 +108,16 @@ public class AI : MonoBehaviour
 
         AI_Animation.SetFloat("Speed", 1.0f);
     }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Summon Trap")
+        {
+
+            if (collision.gameObject.GetComponent<Trap>().primed == true)
+            {
+                collision.gameObject.GetComponent<Trap>().endGame = true;
+            }
+        }
+    }
 }

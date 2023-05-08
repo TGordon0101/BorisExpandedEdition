@@ -9,7 +9,7 @@ public class Trap : MonoBehaviour
 
     private void Start()
     {
-        primed = true;
+        primed = false;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -22,19 +22,6 @@ public class Trap : MonoBehaviour
             {
                 primed = true;
             }
-
-            endGame = true;
         }
-
-        if (collision.gameObject.tag == "Enemy")
-        {
-            if (primed == true)
-            {
-
-            }
-
-            endGame = true;
-        }
-
     }
 }

@@ -21,7 +21,6 @@ public class UIScript : MonoBehaviour
         Buttons_Obj.SetActive(false);
     }
 
-
     public void RetryGame()
     {
         SceneManager.LoadScene(0);

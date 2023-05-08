@@ -63,6 +63,8 @@
     <Compile Include="Assets\Scripts\Room.cs" />
     <Compile Include="Assets\Scripts\PauseScript.cs" />
     <Compile Include="Assets\Scripts\Door.cs" />
+    <Compile Include="Assets\Scripts\Trap.cs" />
+    <Compile Include="Assets\Scripts\Object.cs" />
     <Compile Include="Assets\Scripts\UIScript.cs" />
     <Compile Include="Assets\Scripts\LightManager.cs" />
     <Compile Include="Assets\Scripts\AILocation.cs" />
@@ -70,11 +72,9 @@
     <Compile Include="Assets\Scripts\LightChange.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Test.cs" />
+    <Compile Include="Assets\Scripts\SpriteRender.cs" />
     <Compile Include="Assets\Scripts\NavUp.cs" />
     <Compile Include="Assets\Scripts\Key.cs" />
-    <Compile Include="Assets\Scripts\Object.cs" />
-    <Compile Include="Assets\Scripts\SpriteRender.cs" />
-    <Compile Include="Assets\Scripts\Trap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

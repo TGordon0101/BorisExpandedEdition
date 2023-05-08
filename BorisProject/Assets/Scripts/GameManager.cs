@@ -36,6 +36,12 @@ public class GameManager : MonoBehaviour
             UI_obj.YouWin_Obj.SetActive(true);
             UI_obj.Buttons_Obj.SetActive(true);
         }
+
+        if (Player_Obj.GetComponent<PlayerController>().b_playerDead == true)
+        {
+            UI_obj.YouLose_Obj.SetActive(true);
+            UI_obj.Buttons_Obj.SetActive(true);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -53,6 +59,7 @@ public class GameManager : MonoBehaviour
                     m_lightManager.GetLights()[i].GetComponent<LightChange>().ToggleLightColor();
                 }
             }
+
             b_ChaseState = true;
             AI_Script_Obj.SetBoolChase(true);
         }

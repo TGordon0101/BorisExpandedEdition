@@ -137,9 +137,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8830042559162317525}
+  - component: {fileID: 8830042559162317515}
   - component: {fileID: 8830042559162317526}
   - component: {fileID: 8830042559162317524}
-  - component: {fileID: 8830042559162317515}
   - component: {fileID: 8830042559162317513}
   - component: {fileID: 8830042559162317514}
   m_Layer: 0
@@ -165,48 +165,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &8830042559162317526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8830042559162317527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 423653ea260d0d141be2afab57a93c38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player_Obj: {fileID: 0}
-  AI_Obj: {fileID: 8830042559162317527}
-  Target_Position: {x: 0, y: 0, z: 0}
-  Rotation: {x: 0, y: 0, z: 0}
-  Monster_AI_Mesh: {fileID: 0}
-  AI_Animation: {fileID: 8830042559162317513}
-  AI_Chase: 0
-  SoundEffect: {fileID: 0}
---- !u!195 &8830042559162317524
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8830042559162317527}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.53
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2.49
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!61 &8830042559162317515
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -233,6 +191,49 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.8994265, y: 6.320267}
   m_EdgeRadius: 0
+--- !u!114 &8830042559162317526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830042559162317527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423653ea260d0d141be2afab57a93c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player_Obj: {fileID: 0}
+  Target_Position: {x: 0, y: 0, z: 0}
+  Location_Position: {fileID: 0}
+  Monster_AI_Mesh: {fileID: 0}
+  AI_Animation: {fileID: 8830042559162317513}
+  Locations_List: {fileID: 0}
+  AI_Chase: 0
+  Distance: 0
+  SearchTimer: 0
+--- !u!195 &8830042559162317524
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830042559162317527}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.53
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2.49
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!95 &8830042559162317513
 Animator:
   serializedVersion: 4

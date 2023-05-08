@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxStamina;
 
     private Rigidbody2D body;
-    //public UIScript UI_Obj;
     //public GameManager GM_Obj;
     public AudioSource PlayerSound;
 
@@ -32,7 +31,6 @@ public class PlayerController : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         maxStamina = 50.0f;
         stamina = maxStamina;
-        //UI_Obj = GameObject.Find("EndGameCanvas").GetComponent<UIScript>();
         //GM_Obj = GameObject.Find("GameTrigger").GetComponent<GameManager>();
     }
 
@@ -182,7 +180,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.name == "Monster")
         {
-            //Die();
+            Die();
         }
     }
 
