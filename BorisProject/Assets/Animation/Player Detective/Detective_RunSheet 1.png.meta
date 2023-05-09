@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8e6b8ffa41eb2714cb25d7450f249e4d
+guid: 6fd1ab0eff9014447bfba3bcb52d3909
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Detective_DeathSheet 1_0
+      name: Detective_RunSheet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2bccd0d2575b66b4b9715b7eaee3db22
-      internalID: -530057822
+      spriteID: a3a7fc5d528edb04fa81218f263ed737
+      internalID: 1758947478
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Detective_DeathSheet 1_1
+      name: Detective_RunSheet 1_1
       rect:
         serializedVersion: 2
         x: 512
@@ -164,14 +164,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c253f368ccf14b24c8ce1389d4f90413
-      internalID: 798132929
+      spriteID: a1634039b3be81041afb1d223082888a
+      internalID: 674938855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Detective_DeathSheet 1_2
+      name: Detective_RunSheet 1_2
       rect:
         serializedVersion: 2
         x: 1024
@@ -185,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2801c38658a9f7442aec9193bb614860
-      internalID: -1402027578
+      spriteID: 4fb540604012264429cf822d28e41125
+      internalID: -1380200888
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Detective_DeathSheet 1_3
+      name: Detective_RunSheet 1_3
       rect:
         serializedVersion: 2
         x: 0
@@ -206,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d04be4264f013034b822b7dbecaaad1b
-      internalID: 606876484
+      spriteID: 3c0252b180e5b6c48a26c4b94099eff1
+      internalID: 1032471691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Detective_DeathSheet 1_4
+      name: Detective_RunSheet 1_4
       rect:
         serializedVersion: 2
         x: 512
@@ -227,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3247897fafbbf849b3fbf83007de583
-      internalID: 440416614
+      spriteID: 709f9be83d0ebca49aa8ba98b4afd216
+      internalID: 218142214
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Detective_DeathSheet 1_5
+      name: Detective_RunSheet 1_5
       rect:
         serializedVersion: 2
         x: 1024
@@ -248,14 +248,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50556736d571b734c82028d445d23668
-      internalID: 114835380
+      spriteID: 3bf549ed162d14b4ea15bfddfe594f26
+      internalID: -736854657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Detective_DeathSheet 1_6
+      name: Detective_RunSheet 1_6
       rect:
         serializedVersion: 2
         x: 0
@@ -269,14 +269,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bc02075198260b43ac035b295ba5f84
-      internalID: -861969712
+      spriteID: da77c2e59ec5d14478ee82c9dfad5742
+      internalID: -1919267578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Detective_DeathSheet 1_7
+      name: Detective_RunSheet 1_7
       rect:
         serializedVersion: 2
         x: 512
@@ -290,8 +290,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a91b3d688c2ce8f4a893d11967fcc403
-      internalID: -1978774130
+      spriteID: e8696de11f3e1e64cadc383e2b7ed776
+      internalID: 655859449
       vertices: []
       indices: 
       edges: []
@@ -307,14 +307,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Detective_DeathSheet 1_7: -1978774130
-      Detective_DeathSheet 1_5: 114835380
-      Detective_DeathSheet 1_6: -861969712
-      Detective_DeathSheet 1_1: 798132929
-      Detective_DeathSheet 1_0: -530057822
-      Detective_DeathSheet 1_2: -1402027578
-      Detective_DeathSheet 1_3: 606876484
-      Detective_DeathSheet 1_4: 440416614
+      Detective_RunSheet 1_3: 1032471691
+      Detective_RunSheet 1_0: 1758947478
+      Detective_RunSheet 1_6: -1919267578
+      Detective_RunSheet 1_4: 218142214
+      Detective_RunSheet 1_1: 674938855
+      Detective_RunSheet 1_5: -736854657
+      Detective_RunSheet 1_7: 655859449
+      Detective_RunSheet 1_2: -1380200888
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
