@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Object : MonoBehaviour
 {
-    [SerializeField] private string objectName;
-    [SerializeField] private SpriteRenderer objectRender;
+    [SerializeField] string objectName;
+    [SerializeField] public SpriteRenderer objectRender;
 
-    [SerializeField] private Sprite candleSprite;
-    [SerializeField] private Sprite bookSprite;
-    [SerializeField] private Sprite saltSprite;
+    [SerializeField] public Sprite candleSprite;
+    [SerializeField] public Sprite bookSprite;
+    [SerializeField] public Sprite saltSprite;
 
     // Start is called before the first frame update
     void Start()
@@ -43,5 +43,10 @@ public class Object : MonoBehaviour
         {
             this.gameObject.SetActive(false);
         }
+    }
+
+    public Sprite ReturnSprite()
+    {
+        return objectRender.GetComponent<Sprite>();
     }
 }

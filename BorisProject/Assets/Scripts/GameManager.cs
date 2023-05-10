@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
         m_lightManager = GameObject.Find("LightManager 1").GetComponent<LightManager>();
         Trap_obj = GameObject.Find("Summon Trap").GetComponent<Trap>();
         UI_obj = GameObject.Find("EndGameCanvas").GetComponent<UIScript>();
+        AI_Script_Obj = GameObject.Find("Monster").GetComponent<AI>();
 
         AmbientMusic.Play();
     }

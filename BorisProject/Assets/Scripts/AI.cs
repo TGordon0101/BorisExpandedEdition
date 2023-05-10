@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class AI : MonoBehaviour
 {
     public GameObject Player_Obj;
+    public Rigidbody2D AIrb;
 
     public Vector3 Target_Position;
     public Transform Location_Position;
@@ -18,7 +19,7 @@ public class AI : MonoBehaviour
     public float Distance;
     public float SearchTimer;
 
-   // public AudioSource SoundEffect;
+    // public AudioSource SoundEffect;
 
     void Start()
     {
@@ -26,11 +27,12 @@ public class AI : MonoBehaviour
         Player_Obj = GameObject.FindGameObjectWithTag("Player");
         Location_Position = GameObject.Find("Location 3").GetComponent<Transform>();
         Locations_List = GameObject.Find("Travel Locations").GetComponent<AILocation>();
+        AIrb = GameObject.Find("Monster").GetComponent<Rigidbody2D>();
 
         AI_Chase = true;
 
         //SoundEffect = GetComponent<AudioSource>();
-
+        transform.position = new Vector3(0.0f, -2.0f, 0.0f);
         SearchTimer = 10;
     }
 
@@ -84,12 +86,13 @@ public class AI : MonoBehaviour
 
     private void Search()
     {
-        if(SearchTimer > 0.0f)
+        if (SearchTimer > 0.0f)
         {
             SearchTimer -= Time.deltaTime;
             Monster_AI_Mesh.SetDestination(new Vector3(this.transform.position.x, this.transform.position.y, 1));
             AI_Animation.SetFloat("Speed", 0.0f);
         }
+
         else
         {
             SearchTimer = 0.0f;
@@ -113,7 +116,6 @@ public class AI : MonoBehaviour
     {
         if (collision.gameObject.name == "Summon Trap")
         {
-
             if (collision.gameObject.GetComponent<Trap>().primed == true)
             {
                 collision.gameObject.GetComponent<Trap>().endGame = true;
