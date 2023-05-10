@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float stamina;
     [SerializeField] private float maxStamina;
+    [SerializeField] public int hp;
+    [SerializeField] public float timer = 4;
 
     private Rigidbody2D body;
     //public GameManager GM_Obj;
@@ -29,9 +31,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        maxStamina = 50.0f;
+        maxStamina = 5.0f;
         stamina = maxStamina;
-        //GM_Obj = GameObject.Find("GameTrigger").GetComponent<GameManager>();
+        hp = 3;
     }
 
     void Update()
@@ -147,10 +149,13 @@ public class PlayerController : MonoBehaviour
         {
             stamina = maxStamina;
         }
+
         if (stamina < 0.0f)
         {
             stamina = 0.0f;
+
         }
+        Stagger();
     }
 
     private bool Sprint()
@@ -159,6 +164,7 @@ public class PlayerController : MonoBehaviour
         {
             return true;
         }
+
         else
         {
             return false;
@@ -180,7 +186,19 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.name == "Monster")
         {
-            Die();
+            Vector2 dir = (collision.transform.position - transform.position).normalized;
+            Vector2 force = dir * 50;
+
+            if (hp != 0)
+            {
+                hp -= 1;
+                collision.gameObject.GetComponent<AI>().GetComponent<Rigidbody2D>().AddForce(force, (ForceMode2D)ForceMode.Impulse);
+            }
+
+            else
+            {
+                Die();
+            }
         }
     }
 
@@ -221,4 +239,16 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    public void Stagger()
+    {
+        if (stamina < 0.5f )
+        {
+            moveSpeed = 1.5f;
+        }
+        else
+        {
+            moveSpeed = 5;
+        }
+    }    
 }
