@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Object : MonoBehaviour
 {
-    [SerializeField] string objectName;
+    [SerializeField] public string objectName;
     [SerializeField] public SpriteRenderer objectRender;
 
     [SerializeField] public Sprite candleSprite;
