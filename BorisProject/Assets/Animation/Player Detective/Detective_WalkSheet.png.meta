@@ -101,33 +101,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
+    - serializedVersion: 2
+      name: Detective_WalkSheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21fd840df81107b4ea92242ddc21809c
+      internalID: 1052907406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Detective_WalkSheet_0
       rect:
@@ -143,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33b35f363af75fd408da640937d22e12
-      internalID: 1176325671
+      spriteID: 3ace12b5f21db1942beef33ab6fdbf50
+      internalID: -1888192423
       vertices: []
       indices: 
       edges: []
@@ -164,17 +161,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ea39b96101f66245963c2504f5e5292
-      internalID: 1444385344
+      spriteID: 415c86489d6891945ac05e47e43811a6
+      internalID: -997896158
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Detective_WalkSheet_2
+      name: Detective_WalkSheet_3
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 1536
         y: 1536
         width: 512
         height: 512
@@ -185,29 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3e35f7f822144947ba93c7b4ac6b5ee
-      internalID: 1560453923
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Detective_WalkSheet_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1024
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38e1ffde2dfab3d47a05880dcb7811f5
-      internalID: -1865087518
+      spriteID: 74a2433825daeb748b1502b4f954e6ca
+      internalID: 2084420662
       vertices: []
       indices: 
       edges: []
@@ -216,7 +192,7 @@ TextureImporter:
       name: Detective_WalkSheet_4
       rect:
         serializedVersion: 2
-        x: 512
+        x: 0
         y: 1024
         width: 512
         height: 512
@@ -227,29 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c8b7f332cd7f534ca6b9209bf0937d3
-      internalID: -888107560
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Detective_WalkSheet_5
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 1024
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 223109f9308a47d408ee00dbaf15035c
-      internalID: -2001397157
+      spriteID: 5c5404225d27b244fa5dbd1882f1b49a
+      internalID: 780994631
       vertices: []
       indices: 
       edges: []
@@ -258,6 +213,69 @@ TextureImporter:
       name: Detective_WalkSheet_6
       rect:
         serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08280bfe23ce68d42965af4f5daa65b4
+      internalID: 1633530733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Detective_WalkSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b5739ccfe76c0459100c9bbc9471a9
+      internalID: -1082448510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Detective_WalkSheet_7
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cdf3faecdbeb5849b4e261e5fccab67
+      internalID: -1542135857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Detective_WalkSheet_8
+      rect:
+        serializedVersion: 2
         x: 0
         y: 512
         width: 512
@@ -269,14 +287,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4718c3909bcf44e4aad3549512818e59
-      internalID: -953513770
+      spriteID: 8870e1ef1cf2a154e9dd8363296f338d
+      internalID: -1546275939
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Detective_WalkSheet_7
+      name: Detective_WalkSheet_9
       rect:
         serializedVersion: 2
         x: 512
@@ -290,14 +308,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54043c199d735f34c9ceb82201978383
-      internalID: 1999437828
+      spriteID: 400fc688b9014e740bf1502f09ab27d5
+      internalID: 774077351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Detective_WalkSheet_8
+      name: Detective_WalkSheet_10
       rect:
         serializedVersion: 2
         x: 1024
@@ -311,17 +329,59 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be4c8cf8cfb4ece4f96d5f382e49857b
-      internalID: 781287850
+      spriteID: f7551154e00280c44942bbd3b874be5f
+      internalID: 1696166242
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Detective_WalkSheet_9
+      name: Detective_WalkSheet_11
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1536
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32a88dd4733106a47b30e165fa063191
+      internalID: -662880908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Detective_WalkSheet_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bf25e9e00f26ba44aea26ff45847f09
+      internalID: -409919279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Detective_WalkSheet_13
+      rect:
+        serializedVersion: 2
+        x: 512
         y: 0
         width: 512
         height: 512
@@ -332,8 +392,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d62c434e51e9144fb4bcbe928801784
-      internalID: -489077024
+      spriteID: da5bfd677bb40e34a83920d1ecb00eb8
+      internalID: -1236590414
       vertices: []
       indices: 
       edges: []
@@ -349,16 +409,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Detective_WalkSheet_3: -1865087518
-      Detective_WalkSheet_8: 781287850
-      Detective_WalkSheet_7: 1999437828
-      Detective_WalkSheet_4: -888107560
-      Detective_WalkSheet_9: -489077024
-      Detective_WalkSheet_0: 1176325671
-      Detective_WalkSheet_1: 1444385344
-      Detective_WalkSheet_2: 1560453923
-      Detective_WalkSheet_6: -953513770
-      Detective_WalkSheet_5: -2001397157
+      Detective_WalkSheet_13: -1236590414
+      Detective_WalkSheet_10: 1696166242
+      Detective_WalkSheet_11: -662880908
+      Detective_WalkSheet_3: 2084420662
+      Detective_WalkSheet_8: -1546275939
+      Detective_WalkSheet_7: -1542135857
+      Detective_WalkSheet_4: 780994631
+      Detective_WalkSheet_9: 774077351
+      Detective_WalkSheet_0: -1888192423
+      Detective_WalkSheet_1: -997896158
+      Detective_WalkSheet_2: -1082448510
+      Detective_WalkSheet_6: 1633530733
+      Detective_WalkSheet_5: -409919279
+      Detective_WalkSheet_12: 1052907406
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
