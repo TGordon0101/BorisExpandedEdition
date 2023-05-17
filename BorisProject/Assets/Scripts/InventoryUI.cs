@@ -15,6 +15,11 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] Sprite uiSpriteTwo;
     [SerializeField] Sprite uiSpriteThree;
 
+    [SerializeField] GameObject TextOne;
+    [SerializeField] GameObject TextTwo;
+    [SerializeField] GameObject TextThree;
+
+
     void Start()
     {
         uiOne = GameObject.Find("Type 1").GetComponent<Image>();
@@ -26,6 +31,14 @@ public class InventoryUI : MonoBehaviour
         uiOne.color = Color.clear;
         uiTwo.color = Color.clear;
         uiThree.color = Color.clear;
+
+        TextOne = GameObject.Find("Text Box 1");
+        TextTwo = GameObject.Find("Text Box 2");
+        TextThree = GameObject.Find("Text Box 3");
+
+        //TextOne.SetActive(false);
+        //TextTwo.SetActive(false);
+        //TextThree.SetActive(false);
     }
 
 
@@ -52,7 +65,6 @@ public class InventoryUI : MonoBehaviour
             }
         }
 
-
         if (playerObj.itemTwo != null)
         {
             if (playerObj.itemTwo.objectName == "Candle")
@@ -73,8 +85,6 @@ public class InventoryUI : MonoBehaviour
                 uiTwo.color = new Color(255, 255, 255, 255);
             }
         }
-
-
 
         if (playerObj.itemThree != null)
         {

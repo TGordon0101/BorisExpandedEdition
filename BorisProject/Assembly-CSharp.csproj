@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Test.cs" />
     <Compile Include="Assets\Scripts\SpriteRender.cs" />
     <Compile Include="Assets\Scripts\NavUp.cs" />
+    <Compile Include="Assets\Scripts\Note.cs" />
     <Compile Include="Assets\Scripts\Key.cs" />
   </ItemGroup>
   <ItemGroup>

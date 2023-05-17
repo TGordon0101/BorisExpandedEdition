@@ -9,6 +9,6 @@ public class Test : MonoBehaviour
 
     void Update()
     {
-        Mesh2D.UpdateNavMesh(Mesh2D.navMeshData);
+       // Mesh2D.UpdateNavMesh(Mesh2D.navMeshData);
     }
 }
