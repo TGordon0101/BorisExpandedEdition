@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989411046229015072, guid: f5b0aa364931e9343b51dd8449d3f628, type: 3}
       propertyPath: m_Name
-      value: plate_05 1
+      value: towl_01
       objectReference: {fileID: 0}
     - target: {fileID: 989411046229015073, guid: f5b0aa364931e9343b51dd8449d3f628, type: 3}
       propertyPath: m_Size.x
@@ -139,5 +139,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 989411046229015068, guid: f5b0aa364931e9343b51dd8449d3f628, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5b0aa364931e9343b51dd8449d3f628, type: 3}
