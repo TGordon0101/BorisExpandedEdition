@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 989411046229015072, guid: f5b0aa364931e9343b51dd8449d3f628, type: 3}
       propertyPath: m_Name
-      value: dressing_table_chair
+      value: web_wall
       objectReference: {fileID: 0}
     - target: {fileID: 989411046229015073, guid: f5b0aa364931e9343b51dd8449d3f628, type: 3}
       propertyPath: m_Size.x
@@ -41,11 +41,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989411046229015073, guid: f5b0aa364931e9343b51dd8449d3f628, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.89
+      value: 5.62
       objectReference: {fileID: 0}
     - target: {fileID: 989411046229015073, guid: f5b0aa364931e9343b51dd8449d3f628, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.69
+      value: 2.05
       objectReference: {fileID: 0}
     - target: {fileID: 989411046229015074, guid: f5b0aa364931e9343b51dd8449d3f628, type: 3}
       propertyPath: m_Size.x
@@ -58,7 +58,7 @@ PrefabInstance:
     - target: {fileID: 989411046229015074, guid: f5b0aa364931e9343b51dd8449d3f628, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 47e963ca6ec989e41824565c061519a6, type: 3}
+      objectReference: {fileID: 21300000, guid: f07e6eb0b97bbc348bf7c6e85d83df0f, type: 3}
     - target: {fileID: 989411046229015074, guid: f5b0aa364931e9343b51dd8449d3f628, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -135,14 +135,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 989411046229015068, guid: f5b0aa364931e9343b51dd8449d3f628, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5b0aa364931e9343b51dd8449d3f628, type: 3}
 --- !u!1 &8456469302166955980 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 989411046229015072, guid: f5b0aa364931e9343b51dd8449d3f628, type: 3}
   m_PrefabInstance: {fileID: 8710087144237686252}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &803687394200216407
+--- !u!114 &3706217498936369937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,8 +159,8 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!61 &8031427859483184135
-BoxCollider2D:
+--- !u!68 &8369726286043044159
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -171,16 +172,17 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00000047683716, y: 0.034699917}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.89, y: 1.69}
-    newSize: {x: 8, y: 3}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.6956797, y: 1.4679232}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.51948047, y: -1.6246109}
+  - {x: -0.89006615, y: -1.5773449}
+  - {x: -0.24072742, y: 0.068255424}
+  - {x: -0.6938381, y: 1.6688175}
+  - {x: 0.55617714, y: 1.6722546}
+  - {x: 0.32479668, y: -0.14940071}
+  - {x: 0.62990594, y: -1.6025076}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
