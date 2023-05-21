@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cc725acc5e180bf4383a844df8256013
+guid: 2dea78785fa740646a9ce10f88f0e46f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,71 +101,110 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DoorDBL_DiningRoom_0
+      name: organs_0
       rect:
         serializedVersion: 2
-        x: 65
-        y: 161
-        width: 232
-        height: 445
+        x: 149
+        y: 718
+        width: 341
+        height: 281
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eae85b93f625546439f188416f5649e0
-      internalID: -402542840
+      spriteID: 74527e9c69336484db565de1447161f7
+      internalID: 372543808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoorDBL_DiningRoom_1
+      name: organs_1
       rect:
         serializedVersion: 2
-        x: 767
-        y: 162
-        width: 198
-        height: 448
+        x: 544
+        y: 619
+        width: 243
+        height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed443b44145b80a43843c31f7633737e
-      internalID: 1782305823
+      spriteID: 34b0346b8073d9a4ea4977d36dd0d8bc
+      internalID: 1278496511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: organs_2
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 165
+        width: 209
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4493b31e31d910429fb4f415b4c2188
+      internalID: 1996851926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: organs_3
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 107
+        width: 433
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f5a04ce910a474488606e69cb9559f0
+      internalID: -212411814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: organs_4
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 241
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b7444bfb41eb7b4284c89682869fb7d
+      internalID: -890399231
       vertices: []
       indices: 
       edges: []
@@ -181,8 +220,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DoorDBL_DiningRoom_1: 1782305823
-      DoorDBL_DiningRoom_0: -402542840
+      organs_2: 1996851926
+      organs_4: -890399231
+      organs_3: -212411814
+      organs_1: 1278496511
+      organs_0: 372543808
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
