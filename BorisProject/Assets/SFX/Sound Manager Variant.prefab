@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3756361378485571609
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1954350819024409647, guid: cf6cdf15cc30b9243826f2ec0f713ffb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287185588134263888, guid: cf6cdf15cc30b9243826f2ec0f713ffb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764694785191398978, guid: cf6cdf15cc30b9243826f2ec0f713ffb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764694785789862195, guid: cf6cdf15cc30b9243826f2ec0f713ffb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764694785817614296, guid: cf6cdf15cc30b9243826f2ec0f713ffb, type: 3}
+      propertyPath: m_Name
+      value: Sound Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764694785817614302, guid: cf6cdf15cc30b9243826f2ec0f713ffb, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764694785817614302, guid: cf6cdf15cc30b9243826f2ec0f713ffb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 50.30573
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764694785817614302, guid: cf6cdf15cc30b9243826f2ec0f713ffb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 104.435135
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764694785817614302, guid: cf6cdf15cc30b9243826f2ec0f713ffb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.10053621
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764694785817614302, guid: cf6cdf15cc30b9243826f2ec0f713ffb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764694785817614302, guid: cf6cdf15cc30b9243826f2ec0f713ffb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764694785817614302, guid: cf6cdf15cc30b9243826f2ec0f713ffb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764694785817614302, guid: cf6cdf15cc30b9243826f2ec0f713ffb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764694785817614302, guid: cf6cdf15cc30b9243826f2ec0f713ffb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764694785817614302, guid: cf6cdf15cc30b9243826f2ec0f713ffb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764694785817614302, guid: cf6cdf15cc30b9243826f2ec0f713ffb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cf6cdf15cc30b9243826f2ec0f713ffb, type: 3}
+--- !u!1 &6908796711886227393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7764694785817614296, guid: cf6cdf15cc30b9243826f2ec0f713ffb, type: 3}
+  m_PrefabInstance: {fileID: 3756361378485571609}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &705446296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6908796711886227393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dae61f9712c551e4080abd12078f75a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Player_Walk
+    clip: {fileID: 8300000, guid: 95b70160367062f499f112594585b10a, type: 3}
+    volume: 0.955
+    pitch: 1.4
+    source: {fileID: 0}
+  - name: Ambience_Music
+    clip: {fileID: 8300000, guid: d17c15761c2175645a260b8ebd51c4f1, type: 3}
+    volume: 1
+    pitch: 1.4
+    source: {fileID: 0}
+  - name: Player_Sprint
+    clip: {fileID: 8300000, guid: 95b70160367062f499f112594585b10a, type: 3}
+    volume: 1
+    pitch: 1.5
+    source: {fileID: 0}
+  - name: Enemy_walk
+    clip: {fileID: 8300000, guid: ab780e56fcc66a14fa76287ee25a58b2, type: 3}
+    volume: 1
+    pitch: 1.5
+    source: {fileID: 0}

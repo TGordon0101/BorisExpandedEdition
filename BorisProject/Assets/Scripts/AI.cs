@@ -82,6 +82,7 @@ public class AI : MonoBehaviour
         Target_Position = Player_Obj.transform.position;
         Monster_AI_Mesh.SetDestination(new Vector3(Target_Position.x, Target_Position.y, 1));
         AI_Animation.SetFloat("Speed", 1.0f);
+        FindObjectOfType<AudioManager>().Play("Enemy_Walk");
     }
 
     private void Search()

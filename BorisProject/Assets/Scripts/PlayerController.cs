@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UIElements;
+using UnityEngine.Audio;
 
 public class PlayerController : MonoBehaviour
 {
@@ -56,19 +57,21 @@ public class PlayerController : MonoBehaviour
             //Player Animations
             if (body.velocity.x != 0 || body.velocity.y != 0) 
             {
-                if (Sprint())
+                if (Sprint() == true)
                 {
                     PlayerAnimation.SetFloat("Speed", 2);
+                    FindObjectOfType<AudioManager>().Play("Player_Sprint");
                 }
                 else
                 {
                     PlayerAnimation.SetFloat("Speed", 1);
+                    FindObjectOfType<AudioManager>().Play("Player_Walk");
                 }
             }
             else 
             {
                 PlayerAnimation.SetFloat("Speed", 0);
-                PlayerSound.Play();
+                //PlayerSound.Play();
             }
         }
     }
