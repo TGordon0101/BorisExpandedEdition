@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1815615874426262626}
   - component: {fileID: 4125617098466696915}
   - component: {fileID: 4880958489637729048}
+  - component: {fileID: 2806269104159585368}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -246,6 +247,43 @@ PolygonCollider2D:
       - {x: 0.32, y: -0.56}
       - {x: 0.5, y: -0.53999996}
       - {x: 0.65, y: -0.52}
+--- !u!114 &2806269104159585368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815615874426262625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dae61f9712c551e4080abd12078f75a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Player_Walk
+    clip: {fileID: 8300000, guid: 95b70160367062f499f112594585b10a, type: 3}
+    volume: 0.955
+    pitch: 1.4
+    loop: 1
+    source: {fileID: 0}
+  - name: Ambience_Music
+    clip: {fileID: 8300000, guid: d17c15761c2175645a260b8ebd51c4f1, type: 3}
+    volume: 1
+    pitch: 1.4
+    loop: 1
+    source: {fileID: 0}
+  - name: Player_Sprint
+    clip: {fileID: 8300000, guid: 95b70160367062f499f112594585b10a, type: 3}
+    volume: 1
+    pitch: 1.5
+    loop: 1
+    source: {fileID: 0}
+  - name: Enemy_walk
+    clip: {fileID: 8300000, guid: ab780e56fcc66a14fa76287ee25a58b2, type: 3}
+    volume: 1
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &1815615874900199057
 GameObject:
   m_ObjectHideFlags: 0

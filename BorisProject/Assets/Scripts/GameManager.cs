@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         UI_obj = GameObject.Find("EndGameCanvas").GetComponent<UIScript>();
         AI_Script_Obj = GameObject.Find("Monster").GetComponent<AI>();
 
-        FindObjectOfType<AudioManager>().Play("Amdience_Music");
+        FindObjectOfType<AudioManager>().PlaySound("Amdience_Music");
     }
 
     public void Update()

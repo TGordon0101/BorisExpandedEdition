@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public int hp;
     [SerializeField] public float timer = 4;
 
+    public AudioManager audioManager;
+
     private Rigidbody2D body;
     //public GameManager GM_Obj;
     public AudioSource PlayerSound;
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
         maxStamina = 5.0f;
         stamina = maxStamina;
         hp = 3;
+        audioManager = GetComponent<AudioManager>();
     }
 
     void Update()
@@ -55,21 +58,23 @@ public class PlayerController : MonoBehaviour
             }
 
             //Player Animations
-            if (body.velocity.x != 0 || body.velocity.y != 0) 
+            if (body.velocity.x != 0.0f || body.velocity.y != 0.0f)
             {
-                if (Sprint() == true)
+                if (Sprint() == false)
                 {
                     PlayerAnimation.SetFloat("Speed", 2);
-                    FindObjectOfType<AudioManager>().Play("Player_Sprint");
+                   // FindObjectOfType<AudioManager>().Play("Player_Sprint");
+                    audioManager.PlaySound("Player_Sprint");
                 }
                 else
                 {
                     PlayerAnimation.SetFloat("Speed", 1);
-                    FindObjectOfType<AudioManager>().Play("Player_Walk");
+                    FindObjectOfType<AudioManager>().PlaySound("Player_Walk");
                 }
             }
             else 
             {
+                audioManager.StopSound();
                 PlayerAnimation.SetFloat("Speed", 0);
                 //PlayerSound.Play();
             }
