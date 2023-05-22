@@ -26,11 +26,11 @@ public class AudioManager : MonoBehaviour{
     public void PlaySound (string name)
     {
         s = Array.Find( sounds, sound => sound.name == name);
-        s.source.Play();
+        //s.source.Play();
     }
 
     public void StopSound()
     {
-        s.source.Stop();
+        //s.source.Stop();
     }
 }

@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
             //Player Animations
             if (body.velocity.x != 0.0f || body.velocity.y != 0.0f)
             {
-                if (Sprint() == false)
+                if (Sprint() == true)
                 {
                     PlayerAnimation.SetFloat("Speed", 2);
                    // FindObjectOfType<AudioManager>().Play("Player_Sprint");
@@ -69,7 +69,8 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     PlayerAnimation.SetFloat("Speed", 1);
-                    FindObjectOfType<AudioManager>().PlaySound("Player_Walk");
+                    //FindObjectOfType<AudioManager>().PlaySound("Player_Walk");
+                    audioManager.PlaySound("Player_Walk");
                 }
             }
             else 
