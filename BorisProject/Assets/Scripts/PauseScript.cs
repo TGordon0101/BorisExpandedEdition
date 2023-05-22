@@ -7,47 +7,50 @@ public class PauseScript : MonoBehaviour
 {
     public GameObject resumeButton;
     public GameObject quitButton;
+    public GameObject UI;
+    public bool paused;
 
     public void Start()
     {
         resumeButton = GameObject.Find("Resume");
         quitButton = GameObject.Find("Quit");
+        UI = GameObject.Find("Menu");
 
-        resumeButton.SetActive(false);
-        quitButton.SetActive(false);
+        UI.SetActive(false);
     }
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1) 
+        if (Input.GetKeyDown(KeyCode.Escape)) 
         {
-            PauseGame();
-        }
+            if(paused)
+            {
+                ResumeGame();
 
-        else if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 0)
-        {
-            ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
         }
     }
 
     public void PauseGame()
     {
-        Time.timeScale = 0;
-
-        resumeButton.SetActive(true);
-        quitButton.SetActive(true);
+        UI.SetActive(true);
+        Time.timeScale = 0f;
+        paused = true;
     }
 
     public void ResumeGame()
     {
-        Time.timeScale = 1;
-
-        resumeButton.SetActive(false);
-        quitButton.SetActive(false);
+        UI.SetActive(false);
+        Time.timeScale = 1f;
+        paused = false;
     }
 
     public void QuitGame()
     {
-        SceneManager.LoadScene(0);
+        UI.SetActive(false);
     }
 }

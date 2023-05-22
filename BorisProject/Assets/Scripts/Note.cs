@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-    [SerializeField] bool m_Display;
     [SerializeField] int ID;
 
     [SerializeField] GameObject TextOne;
@@ -13,15 +12,17 @@ public class Note : MonoBehaviour
 
     public void Start()
     {
-        TextOne = GameObject.Find("Text Box 1");
-        TextTwo = GameObject.Find("Text Box 2");
-        TextThree = GameObject.Find("Text Box 3");
+        //TextOne = GameObject.Find("Text Box 1");
+        // TextTwo = GameObject.Find("Text Box 2");
+        // TextThree = GameObject.Find("Text Box 3");
+
+        TextOne.SetActive(false);
+        TextTwo.SetActive(false);
+        TextThree.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        m_Display = true;
-
         if (col.gameObject.name == "Player")
         {
             if(ID == 1)
@@ -29,12 +30,12 @@ public class Note : MonoBehaviour
                 TextOne.SetActive(true);
             }
 
-            if (ID == 2)
+            else if (ID == 2)
             {
                 TextTwo.SetActive(true);
             }
 
-            if (ID == 3)
+            else if (ID == 3)
             {
                 TextThree.SetActive(true);
             }
@@ -46,7 +47,5 @@ public class Note : MonoBehaviour
         TextOne.SetActive(false);
         TextTwo.SetActive(false);
         TextThree.SetActive(false);
-
-        m_Display = false;
     }
 }

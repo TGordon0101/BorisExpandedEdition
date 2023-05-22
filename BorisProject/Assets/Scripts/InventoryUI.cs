@@ -32,10 +32,6 @@ public class InventoryUI : MonoBehaviour
         uiTwo.color = Color.clear;
         uiThree.color = Color.clear;
 
-        TextOne = GameObject.Find("Text Box 1");
-        TextTwo = GameObject.Find("Text Box 2");
-        TextThree = GameObject.Find("Text Box 3");
-
         //TextOne.SetActive(false);
         //TextTwo.SetActive(false);
         //TextThree.SetActive(false);
@@ -106,5 +102,12 @@ public class InventoryUI : MonoBehaviour
                 uiThree.color = new Color(255, 255, 255, 255);
             }
         }
+    }
+
+    public void DisableUI()
+    {
+        uiOne.color = Color.clear;
+        uiTwo.color = Color.clear;
+        uiThree.color = Color.clear;
     }
 }

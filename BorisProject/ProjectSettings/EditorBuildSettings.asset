@@ -9,12 +9,15 @@ EditorBuildSettings:
     path: Assets/SCENES/Game/Main_Menu.unity
     guid: f047ace7dfad465498f6d73e263c5749
   - enabled: 1
+    path: Assets/SCENES/Tay/Test_Tay_Jaescene.unity
+    guid: 2940ef15ba613134d805b81f0e4f2b8c
+  - enabled: 1
     path: Assets/SCENES/Game/FINAL GAME.unity
     guid: 7faaae2926c058340b19cf1ec111636d
   - enabled: 0
-    path: Assets/Scenes/The_Game/The_Game.unity
-    guid: 1d8ccdd01b418a248b9bff2e28dc67d5
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
