@@ -13,17 +13,17 @@ public class LightManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    //void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Space))
-    //    {
-    //        for (int i = 0; i < m_lights.Length; i++)
-    //        {
-    //            m_lights[i].GetComponent<LightChange>().ToggleLightColor();
-    //        }
-    //    }
-    //}
+    //Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            for (int i = 0; i < m_lights.Length; i++)
+            {
+                m_lights[i].GetComponent<LightChange>().ToggleLightColor();
+            }
+        }
+    }
 
     public GameObject[] GetLights()
     {

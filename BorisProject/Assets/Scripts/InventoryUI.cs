@@ -18,6 +18,7 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] GameObject TextOne;
     [SerializeField] GameObject TextTwo;
     [SerializeField] GameObject TextThree;
+    bool Cleared;
 
 
     void Start()
@@ -40,7 +41,7 @@ public class InventoryUI : MonoBehaviour
 
     void Update()
     {
-        if (playerObj.itemOne != null)
+        if (playerObj.itemOne != null && Cleared == false)
         {
             if (playerObj.itemOne.objectName == "Candle")
             {
@@ -61,7 +62,7 @@ public class InventoryUI : MonoBehaviour
             }
         }
 
-        if (playerObj.itemTwo != null)
+        if (playerObj.itemTwo != null && Cleared == false)
         {
             if (playerObj.itemTwo.objectName == "Candle")
             {
@@ -82,7 +83,7 @@ public class InventoryUI : MonoBehaviour
             }
         }
 
-        if (playerObj.itemThree != null)
+        if (playerObj.itemThree != null && Cleared == false)
         {
             if (playerObj.itemThree.objectName == "Candle")
             {
@@ -106,8 +107,10 @@ public class InventoryUI : MonoBehaviour
 
     public void DisableUI()
     {
-        uiOne.color = Color.clear;
-        uiTwo.color = Color.clear;
-        uiThree.color = Color.clear;
+        Cleared = true;
+
+        uiOne.color = new Color(255, 255, 255, 0);
+        uiTwo.color = new Color(255, 255, 255, 0);
+        uiThree.color = new Color(255, 255, 255, 0);
     }
 }

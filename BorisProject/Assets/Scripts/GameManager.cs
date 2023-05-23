@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
         AI_Script_Obj = GameObject.Find("Monster").GetComponent<AI>();
 
         FindObjectOfType<AudioManager>().PlaySound("Amdience_Music");
+
+        AmbientMusic.Play();
     }
 
     public void Update()
@@ -36,6 +38,8 @@ public class GameManager : MonoBehaviour
         {
             UI_obj.YouWin_Obj.SetActive(true);
             UI_obj.Buttons_Obj.SetActive(true);
+
+            AI_Script_Obj.SetBoolChase(false);
         }
 
         if (Player_Obj.GetComponent<PlayerController>().b_playerDead == true)

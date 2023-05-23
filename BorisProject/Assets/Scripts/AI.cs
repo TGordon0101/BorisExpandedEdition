@@ -38,33 +38,38 @@ public class AI : MonoBehaviour
 
     void Update()
     {
-        Distance = Vector3.Distance(this.transform.position, Player_Obj.transform.position);
-
-        if (Distance > 25.0f)
+        if (AI_Chase == true)
         {
-            Search();
-        }
-        else if (Distance < 25.0f) {
-            SearchTimer = 10;
-            ChasePlayer();
-        }
-        else {
-            AI_Animation.SetFloat("Speed", 0.0f);
-            PlaySound();
-        }
+            Distance = Vector3.Distance(this.transform.position, Player_Obj.transform.position);
 
-        if (SearchTimer == 0.0f)
-        {
-            Wander();
+            if (Distance > 25.0f)
+            {
+                Search();
+            }
+            else if (Distance < 25.0f)
+            {
+                SearchTimer = 10;
+                ChasePlayer();
+            }
+            else
+            {
+                AI_Animation.SetFloat("Speed", 0.0f);
+                PlaySound();
+            }
+
+            if (SearchTimer == 0.0f)
+            {
+                Wander();
+            }
+
+            Vector3 diff = Player_Obj.transform.position - transform.position;
+            diff.Normalize();
+
+            float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, rot_z + 90);
+
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 2);
         }
-
-        Vector3 diff = Player_Obj.transform.position - transform.position;
-        diff.Normalize();
-
-        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rot_z + 90);
-
-        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 2);
     }
 
     public void SetBoolChase(bool _Chase)
