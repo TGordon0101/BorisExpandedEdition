@@ -52,5 +52,6 @@ public class PauseScript : MonoBehaviour
     public void QuitGame()
     {
         UI.SetActive(false);
+        SceneManager.LoadScene(0);
     }
 }

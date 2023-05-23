@@ -7,11 +7,15 @@ public class Trap : MonoBehaviour
     [SerializeField] public bool primed;
     [SerializeField] public bool endGame;
     [SerializeField] public GameObject UI;
+    [SerializeField] public SpriteRenderer CurrentSprite;
+    [SerializeField] public Sprite StartSprite;
+    [SerializeField] public Sprite EndSprite;
 
     private void Start()
     {
         primed = false;
         UI = GameObject.Find("UI");
+        CurrentSprite.sprite = StartSprite;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -22,6 +26,7 @@ public class Trap : MonoBehaviour
                 collision.gameObject.GetComponent<PlayerController>().itemTwo != null &&
                 collision.gameObject.GetComponent<PlayerController>().itemThree != null)
             {
+                CurrentSprite.sprite = EndSprite;
                 primed = true;
                 UI.GetComponent<InventoryUI>().DisableUI();
             }
