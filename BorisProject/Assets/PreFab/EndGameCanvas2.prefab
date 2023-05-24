@@ -70,8 +70,8 @@ MonoBehaviour:
 
     That Thing'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5f44d579d43507148b76fafa11a9c292, type: 2}
-  m_sharedMaterial: {fileID: -8333319291943770489, guid: 5f44d579d43507148b76fafa11a9c292, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ea2375aa1ffaeb84c9930974ad9fcb67, type: 2}
+  m_sharedMaterial: {fileID: 9072351136726312743, guid: ea2375aa1ffaeb84c9930974ad9fcb67, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -426,7 +426,6 @@ MonoBehaviour:
   YouWin_Obj: {fileID: 0}
   YouLose_Obj: {fileID: 0}
   Buttons_Obj: {fileID: 0}
-  GM_Obj: {fileID: 0}
 --- !u!1 &9183437511617026902
 GameObject:
   m_ObjectHideFlags: 0
