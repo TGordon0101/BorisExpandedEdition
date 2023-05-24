@@ -9,6 +9,8 @@ public class Transition : MonoBehaviour
     public Animator animator;
     private int leveltoLoad;
     public Image FadeBlack;
+    public AudioSource MenuClick;
+    public AudioSource MenuMuic;
 
     void Update()
     {
@@ -33,5 +35,20 @@ public class Transition : MonoBehaviour
     public void OnFadeComplete()
     {
         SceneManager.LoadScene(leveltoLoad);
+    }
+
+    public void PlaySoundEffect()
+    {
+        float startVolume = MenuMuic.volume;
+
+        while (MenuMuic.volume > 0)
+        {
+            MenuMuic.volume -= startVolume -= 0.001f;
+        }
+
+        //MenuMuic.Stop();
+        //MenuMuic.volume = startVolume;
+
+        MenuClick.Play();
     }
 }

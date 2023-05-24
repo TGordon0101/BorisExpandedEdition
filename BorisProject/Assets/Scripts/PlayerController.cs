@@ -16,8 +16,9 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public bool b_playerDead = false;
 
-    [SerializeField] private float stamina;
+    [SerializeField] public float stamina;
     [SerializeField] private float maxStamina;
+    [SerializeField] public float Exhaust;
     [SerializeField] public int hp;
     [SerializeField] public float timer = 4;
 
@@ -28,6 +29,8 @@ public class PlayerController : MonoBehaviour
 
     public Animator PlayerAnimation;
     public Animator DeathPlayerAnimation;
+
+    [SerializeField] AudioSource PickUpSound;
 
     // Start is called before the first frame update
     void Start()
@@ -79,9 +82,9 @@ public class PlayerController : MonoBehaviour
                 //PlayerSound.Play();
             }
 
-            if(PlayerAnimation.GetBool("Exhausted") == true && stamina < 0.5f)
+            if(PlayerAnimation.GetBool("Exhausted") == true && stamina > 0.5f)
             {
-                PlayerAnimation.SetBool("Exhasted", false);
+                PlayerAnimation.SetBool("Exhausted", false);
             }
         }
     }
@@ -145,6 +148,7 @@ public class PlayerController : MonoBehaviour
         {
             body.velocity = input.normalized * moveSpeed * 2;
             stamina -= 1.0f / 60.0f;
+            Exhaust += 3.0f / 60.0f;
         }
 
         //Walk and Increase Stamina
@@ -154,6 +158,7 @@ public class PlayerController : MonoBehaviour
             if (!Sprint())
             {
                 stamina += 2.0f / 60.0f;
+                Exhaust -= 4.0f / 60.0f;
             }
         }
 
@@ -166,7 +171,11 @@ public class PlayerController : MonoBehaviour
         if (stamina < 0.0f)
         {
             stamina = 0.0f;
+        }
 
+        if(Exhaust < 0f)
+        {
+            Exhaust = 0f;
         }
 
         Stagger();
@@ -243,6 +252,8 @@ public class PlayerController : MonoBehaviour
         // Check if item is already in inventory
         if (_object != itemOne && _object != itemTwo && _object != itemThree)
         {
+            PickUpSound.Play();
+
             // if the item in slot one is null, set collided object to first slot
             // Repeat for all three slots
             if (itemOne == null)
@@ -271,7 +282,7 @@ public class PlayerController : MonoBehaviour
     {
         if (stamina < 0.5f)
         {
-            PlayerAnimation.SetBool("Exhasted", true);
+            PlayerAnimation.SetBool("Exhausted", true);
             PlayerAnimation.SetFloat("Speed", 1.0f);
             moveSpeed = 1.5f;
         }
