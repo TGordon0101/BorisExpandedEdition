@@ -12,6 +12,8 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] Image uiTwo;
     [SerializeField] Image uiThree;
 
+    [SerializeField] RawImage ExhaustedSprite;
+
     [SerializeField] Sprite uiSpriteOne;
     [SerializeField] Sprite uiSpriteTwo;
     [SerializeField] Sprite uiSpriteThree;
@@ -21,6 +23,7 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] GameObject TextThree;
     [SerializeField] GameObject Hint;
     bool Cleared;
+    public float FadeIn;
 
 
     void Start()
@@ -37,14 +40,16 @@ public class InventoryUI : MonoBehaviour
 
         Hint = GameObject.Find("Hint");
         Hint.SetActive(false);
-        //TextOne.SetActive(false);
-        //TextTwo.SetActive(false);
-        //TextThree.SetActive(false);
+
+        ExhaustedSprite = GameObject.Find("ExhaustedEffect").GetComponent<RawImage>();
+        ExhaustedSprite.color = Color.clear;
     }
 
 
     void Update()
     {
+        ExhaustedSprite.color = new Color(255,255,255, playerObj.Exhaust / 14f);
+
         if (playerObj.itemOne != null && Cleared == false)
         {
             if (playerObj.itemOne.objectName == "Candle")

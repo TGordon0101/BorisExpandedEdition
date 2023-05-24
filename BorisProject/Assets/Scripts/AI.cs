@@ -15,10 +15,13 @@ public class AI : MonoBehaviour
     public NavMeshAgent Monster_AI_Mesh;
     public Animator AI_Animation;
     public AILocation Locations_List;
+    public AudioSource Sneer;
+    public AudioSource Walking;
 
     public bool AI_Chase;
     public float Distance;
     public float SearchTimer;
+    public bool SneerTime = false;
 
     // public AudioSource SoundEffect;
 
@@ -45,17 +48,25 @@ public class AI : MonoBehaviour
 
             if (Distance > 25.0f)
             {
+                if(SneerTime == false)
+                {
+                    Sneer.Play();
+                    SneerTime = true;
+                }
+               
                 Search();
             }
             else if (Distance < 25.0f)
             {
                 SearchTimer = 10;
                 ChasePlayer();
+                SneerTime = false;
             }
             else
             {
+                Walking.Stop();
                 AI_Animation.SetFloat("Speed", 0.0f);
-                PlaySound();
+                //PlaySound();
             }
 
             if (SearchTimer == 0.0f)
@@ -73,7 +84,6 @@ public class AI : MonoBehaviour
         }
         else
         {
-            //Monster_AI_Mesh.SetDestination(Monster_AI_Mesh.GetComponent<Transform>().position);
             Monster_AI_Mesh.transform.rotation = Quaternion.Euler(0, 0, 0);
             Monster_AI_Mesh.transform.position = new Vector3(13.58806f, 58.79728f, -0.3066633f);
         }
@@ -94,6 +104,7 @@ public class AI : MonoBehaviour
         Target_Position = Player_Obj.transform.position;
         Monster_AI_Mesh.SetDestination(new Vector3(Target_Position.x, Target_Position.y, 1));
         AI_Animation.SetFloat("Speed", 1.0f);
+        Walking.Play();
         FindObjectOfType<AudioManager>().PlaySound("Enemy_Walk");
     }
 
@@ -104,6 +115,7 @@ public class AI : MonoBehaviour
             SearchTimer -= Time.deltaTime;
             Monster_AI_Mesh.SetDestination(new Vector3(this.transform.position.x, this.transform.position.y, 1));
             AI_Animation.SetFloat("Speed", 0.0f);
+            Walking.Stop();
         }
 
         else
@@ -123,6 +135,7 @@ public class AI : MonoBehaviour
         }
 
         AI_Animation.SetFloat("Speed", 1.0f);
+        Walking.Play();
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
