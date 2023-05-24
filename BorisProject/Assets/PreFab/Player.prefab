@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 83aeefcd97566c24d978a1152eb9bdf9, type: 3}
+  m_Sprite: {fileID: 1220877668, guid: d2402f15fe2f736439821f58f0262547, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,6 +133,7 @@ MonoBehaviour:
   maxStamina: 0
   hp: 0
   timer: 4
+  audioManager: {fileID: 0}
   PlayerSound: {fileID: 0}
   PlayerAnimation: {fileID: 0}
   DeathPlayerAnimation: {fileID: 0}
