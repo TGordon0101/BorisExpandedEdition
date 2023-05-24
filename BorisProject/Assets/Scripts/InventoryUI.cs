@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,7 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] GameObject TextOne;
     [SerializeField] GameObject TextTwo;
     [SerializeField] GameObject TextThree;
+    [SerializeField] GameObject Hint;
     bool Cleared;
 
 
@@ -33,6 +35,8 @@ public class InventoryUI : MonoBehaviour
         uiTwo.color = Color.clear;
         uiThree.color = Color.clear;
 
+        Hint = GameObject.Find("Hint");
+        Hint.SetActive(false);
         //TextOne.SetActive(false);
         //TextTwo.SetActive(false);
         //TextThree.SetActive(false);
@@ -112,5 +116,15 @@ public class InventoryUI : MonoBehaviour
         uiOne.color = new Color(255, 255, 255, 0);
         uiTwo.color = new Color(255, 255, 255, 0);
         uiThree.color = new Color(255, 255, 255, 0);
+    }
+
+    public void ShowText()
+    {
+        Hint.SetActive(true);
+    }
+
+    public void HideText()
+    {
+        Hint.SetActive(false);
     }
 }

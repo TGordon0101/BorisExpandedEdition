@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     public AudioManager audioManager;
 
     private Rigidbody2D body;
-    //public GameManager GM_Obj;
     public AudioSource PlayerSound;
 
     public Animator PlayerAnimation;
@@ -224,6 +223,19 @@ public class PlayerController : MonoBehaviour
             // Check invetneory function
             CheckInventory(collision.gameObject.GetComponent<Object>());
         }
+
+        if (collision.gameObject.name == "Summon Trap")
+        {
+            collision.gameObject.GetComponent<Trap>().ShowHint();
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Summon Trap")
+        {
+            collision.gameObject.GetComponent<Trap>().DisableHint();
+        }
     }
 
     private void CheckInventory(Object _object)
@@ -266,7 +278,6 @@ public class PlayerController : MonoBehaviour
 
         else
         {
-            
             moveSpeed = 5;
         }
     }    

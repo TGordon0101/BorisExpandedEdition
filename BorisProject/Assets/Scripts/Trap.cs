@@ -32,4 +32,14 @@ public class Trap : MonoBehaviour
             }
         }
     }
+
+    public void ShowHint()
+    {
+        UI.GetComponent<InventoryUI>().ShowText();
+    }
+
+    public void DisableHint()
+    {
+        UI.GetComponent<InventoryUI>().HideText();
+    }
 }

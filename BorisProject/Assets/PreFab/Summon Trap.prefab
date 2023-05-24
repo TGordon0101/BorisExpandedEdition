@@ -48,6 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   primed: 0
   endGame: 0
+  UI: {fileID: 0}
+  CurrentSprite: {fileID: 0}
+  StartSprite: {fileID: 0}
+  EndSprite: {fileID: 0}
 --- !u!212 &1377320663767063777
 SpriteRenderer:
   m_ObjectHideFlags: 0
