@@ -22,8 +22,8 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] GameObject TextTwo;
     [SerializeField] GameObject TextThree;
     [SerializeField] GameObject Hint;
+
     bool Cleared;
-    public float FadeIn;
 
 
     void Start()

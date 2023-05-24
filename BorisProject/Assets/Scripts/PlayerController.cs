@@ -22,15 +22,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public int hp;
     [SerializeField] public float timer = 4;
 
-    public AudioManager audioManager;
-
     private Rigidbody2D body;
-    public AudioSource PlayerSound;
+    public AudioSource PlayerWalking;
 
     public Animator PlayerAnimation;
     public Animator DeathPlayerAnimation;
 
     [SerializeField] AudioSource PickUpSound;
+    [SerializeField] AudioSource GruntSound;
+    [SerializeField] AudioSource Breathing;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +39,12 @@ public class PlayerController : MonoBehaviour
         maxStamina = 5.0f;
         stamina = maxStamina;
         hp = 3;
-        audioManager = GetComponent<AudioManager>();
+
+        PlayerWalking.Play();
+        Breathing.Play();
+        Breathing.Pause();
+
+        PlayerWalking.pitch = 1.2f;
     }
 
     void Update()
@@ -47,13 +52,10 @@ public class PlayerController : MonoBehaviour
         if (Time.timeScale != 0)
         {
             //Player Movement
-            if (b_playerDead == false /*&& GM_Obj.b_GameEnd == false*/)
+            if (b_playerDead == false)
             {
                 //Move Camera
                 MoveCamera();
-
-                //Look At Mouse
-                //LookAtMouse();
 
                 //Move Player
                 Move();
@@ -65,21 +67,22 @@ public class PlayerController : MonoBehaviour
                 if (Sprint() == true && stamina > 0.5f)
                 {
                     PlayerAnimation.SetFloat("Speed", 3);
-                   // FindObjectOfType<AudioManager>().Play("Player_Sprint");
-                    audioManager.PlaySound("Player_Sprint");
+
+                    PlayerWalking.pitch = 2.25f;
                 }
                 else
                 {
                     PlayerAnimation.SetFloat("Speed", 1);
-                    //FindObjectOfType<AudioManager>().PlaySound("Player_Walk");
-                    audioManager.PlaySound("Player_Walk");
+                    PlayerWalking.pitch = 1.2f;
                 }
+
+                PlayerWalking.UnPause();
             }
+
             else 
             {
-                audioManager.StopSound();
                 PlayerAnimation.SetFloat("Speed", 0);
-                //PlayerSound.Play();
+                PlayerWalking.Pause();
             }
 
             if(PlayerAnimation.GetBool("Exhausted") == true && stamina > 0.5f)
@@ -88,12 +91,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-    //private void LookAtMouse()
-    //{
-    //    Vector2 mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    //    transform.up = (Vector3)(mousePos - new Vector2(transform.position.x, transform.position.y));
-    //}
 
     private void RotatePlayer(Vector2 _wasdInput)
     {
@@ -173,7 +170,7 @@ public class PlayerController : MonoBehaviour
             stamina = 0.0f;
         }
 
-        if(Exhaust < 0f)
+        if (Exhaust < 0f)
         {
             Exhaust = 0f;
         }
@@ -215,6 +212,8 @@ public class PlayerController : MonoBehaviour
             if (hp != 0)
             {
                 hp -= 1;
+
+                GruntSound.Play();
                 collision.gameObject.GetComponent<AI>().GetComponent<Rigidbody2D>().AddForce(force, (ForceMode2D)ForceMode.Impulse);
             }
 
@@ -285,6 +284,12 @@ public class PlayerController : MonoBehaviour
             PlayerAnimation.SetBool("Exhausted", true);
             PlayerAnimation.SetFloat("Speed", 1.0f);
             moveSpeed = 1.5f;
+            Breathing.UnPause();
+        }
+
+        if (stamina > 3.5f)
+        {
+            Breathing.Pause();
         }
 
         else

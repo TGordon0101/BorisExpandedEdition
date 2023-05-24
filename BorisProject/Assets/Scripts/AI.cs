@@ -38,6 +38,8 @@ public class AI : MonoBehaviour
         //SoundEffect = GetComponent<AudioSource>();
         transform.position = new Vector3(0.0f, -2.0f, 0.0f);
         SearchTimer = 10;
+
+        Walking.Play();
     }
 
     void Update()
@@ -64,7 +66,7 @@ public class AI : MonoBehaviour
             }
             else
             {
-                Walking.Stop();
+                Walking.Pause();
                 AI_Animation.SetFloat("Speed", 0.0f);
                 //PlaySound();
             }
@@ -82,6 +84,7 @@ public class AI : MonoBehaviour
 
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 2);
         }
+
         else
         {
             Monster_AI_Mesh.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -104,8 +107,7 @@ public class AI : MonoBehaviour
         Target_Position = Player_Obj.transform.position;
         Monster_AI_Mesh.SetDestination(new Vector3(Target_Position.x, Target_Position.y, 1));
         AI_Animation.SetFloat("Speed", 1.0f);
-        Walking.Play();
-        FindObjectOfType<AudioManager>().PlaySound("Enemy_Walk");
+        Walking.UnPause();
     }
 
     private void Search()
@@ -115,7 +117,7 @@ public class AI : MonoBehaviour
             SearchTimer -= Time.deltaTime;
             Monster_AI_Mesh.SetDestination(new Vector3(this.transform.position.x, this.transform.position.y, 1));
             AI_Animation.SetFloat("Speed", 0.0f);
-            Walking.Stop();
+            Walking.Pause();
         }
 
         else
@@ -135,7 +137,7 @@ public class AI : MonoBehaviour
         }
 
         AI_Animation.SetFloat("Speed", 1.0f);
-        Walking.Play();
+        Walking.UnPause();
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
