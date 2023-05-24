@@ -60,9 +60,9 @@ public class PlayerController : MonoBehaviour
             //Player Animations
             if (body.velocity.x != 0.0f || body.velocity.y != 0.0f)
             {
-                if (Sprint() == true)
+                if (Sprint() == true && stamina > 0.5f)
                 {
-                    PlayerAnimation.SetFloat("Speed", 2);
+                    PlayerAnimation.SetFloat("Speed", 3);
                    // FindObjectOfType<AudioManager>().Play("Player_Sprint");
                     audioManager.PlaySound("Player_Sprint");
                 }
@@ -78,6 +78,11 @@ public class PlayerController : MonoBehaviour
                 audioManager.StopSound();
                 PlayerAnimation.SetFloat("Speed", 0);
                 //PlayerSound.Play();
+            }
+
+            if(PlayerAnimation.GetBool("Exhausted") == true && stamina < 0.5f)
+            {
+                PlayerAnimation.SetBool("Exhasted", false);
             }
         }
     }
@@ -164,6 +169,7 @@ public class PlayerController : MonoBehaviour
             stamina = 0.0f;
 
         }
+
         Stagger();
     }
 
@@ -251,12 +257,16 @@ public class PlayerController : MonoBehaviour
 
     public void Stagger()
     {
-        if (stamina < 0.5f )
+        if (stamina < 0.5f)
         {
+            PlayerAnimation.SetBool("Exhasted", true);
+            PlayerAnimation.SetFloat("Speed", 1.0f);
             moveSpeed = 1.5f;
         }
+
         else
         {
+            
             moveSpeed = 5;
         }
     }    

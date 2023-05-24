@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class AI : MonoBehaviour
 {
     public GameObject Player_Obj;
+    public GameObject TrapObj;
     public Rigidbody2D AIrb;
 
     public Vector3 Target_Position;
@@ -38,7 +39,7 @@ public class AI : MonoBehaviour
 
     void Update()
     {
-        if (AI_Chase == true)
+        if (AI_Animation.GetBool("Dead") == false)
         {
             Distance = Vector3.Distance(this.transform.position, Player_Obj.transform.position);
 
@@ -69,6 +70,12 @@ public class AI : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, 0f, rot_z + 90);
 
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 2);
+        }
+        else
+        {
+            //Monster_AI_Mesh.SetDestination(Monster_AI_Mesh.GetComponent<Transform>().position);
+            Monster_AI_Mesh.transform.rotation = Quaternion.Euler(0, 0, 0);
+            Monster_AI_Mesh.transform.position = new Vector3(13.58806f, 58.79728f, -0.3066633f);
         }
     }
 
@@ -124,8 +131,16 @@ public class AI : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<Trap>().primed == true)
             {
-                collision.gameObject.GetComponent<Trap>().endGame = true;
+                AI_Chase = false;
+
+                AI_Animation.SetBool("Dead", true);
+                TrapObj = collision.gameObject;
             }
         }
+    }
+
+    public void EndGame()
+    {
+        TrapObj.GetComponent<Trap>().endGame = true;
     }
 }
