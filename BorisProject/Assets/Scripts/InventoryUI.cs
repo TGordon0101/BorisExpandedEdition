@@ -13,6 +13,7 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] Image uiThree;
 
     [SerializeField] RawImage ExhaustedSprite;
+    [SerializeField] RawImage BloodSprite;
 
     [SerializeField] Sprite uiSpriteOne;
     [SerializeField] Sprite uiSpriteTwo;
@@ -22,8 +23,9 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] GameObject TextTwo;
     [SerializeField] GameObject TextThree;
     [SerializeField] GameObject Hint;
+    public float Timer;
+
     bool Cleared;
-    public float FadeIn;
 
 
     void Start()
@@ -42,13 +44,19 @@ public class InventoryUI : MonoBehaviour
         Hint.SetActive(false);
 
         ExhaustedSprite = GameObject.Find("ExhaustedEffect").GetComponent<RawImage>();
+        BloodSprite = GameObject.Find("Blood").GetComponent<RawImage>();
+
         ExhaustedSprite.color = Color.clear;
+        BloodSprite.color = Color.clear;
+
+        Timer = 0f;
     }
 
 
     void Update()
     {
         ExhaustedSprite.color = new Color(255,255,255, playerObj.Exhaust / 14f);
+        BloodOnScreen();
 
         if (playerObj.itemOne != null && Cleared == false)
         {
@@ -131,5 +139,17 @@ public class InventoryUI : MonoBehaviour
     public void HideText()
     {
         Hint.SetActive(false);
+    }
+
+    public void BloodOnScreen()
+    {
+        Timer -= 0.5f / 60f;
+        BloodSprite.color = new Color(255, 255, 255, Timer);
+    }
+
+    public void ChangePos()
+    {
+        BloodSprite.rectTransform.position = new Vector3(Random.Range(0, 500.0f), Random.Range(0, 700.0f), 0f);
+        BloodSprite.rectTransform.rotation = Quaternion.Euler(0f, 0f, Random.Range(0, 500.0f));
     }
 }

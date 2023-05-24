@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private LightManager m_lightManager;
+    //[SerializeField] private LightManager m_lightManager;
     public GameObject Player_Obj;
     public AI AI_Script_Obj;
     public Trap Trap_obj;
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Player_Obj = GameObject.Find("Player");
-        m_lightManager = GameObject.Find("LightManager 1").GetComponent<LightManager>();
+       // m_lightManager = GameObject.Find("LightManager 1").GetComponent<LightManager>();
         Trap_obj = GameObject.Find("Summon Trap").GetComponent<Trap>();
         UI_obj = GameObject.Find("EndGameCanvas").GetComponent<UIScript>();
         AI_Script_Obj = GameObject.Find("Monster").GetComponent<AI>();
@@ -60,10 +60,10 @@ public class GameManager : MonoBehaviour
         {
             if(!b_ChaseState)
             {
-                for (int i = 0; i < m_lightManager.GetLights().Length; i++)
-                {
-                    m_lightManager.GetLights()[i].GetComponent<LightChange>().ToggleLightColor();
-                }
+                //for (int i = 0; i < m_lightManager.GetLights().Length; i++)
+                //{
+                //    m_lightManager.GetLights()[i].GetComponent<LightChange>().ToggleLightColor();
+                //}
             }
 
             b_ChaseState = true;
