@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public Object itemTwo;
     [SerializeField] public Object itemThree;
 
+    [SerializeField] public InventoryUI UI;
+
     public float moveSpeed;
     public bool b_playerDead = false;
 
@@ -45,6 +47,8 @@ public class PlayerController : MonoBehaviour
         Breathing.Pause();
 
         PlayerWalking.pitch = 1.2f;
+
+        UI = GameObject.Find("UI").GetComponent<InventoryUI>();
     }
 
     void Update()
@@ -213,6 +217,8 @@ public class PlayerController : MonoBehaviour
             {
                 hp -= 1;
 
+                UI.Timer = 0.8f;
+                UI.ChangePos();
                 GruntSound.Play();
                 collision.gameObject.GetComponent<AI>().GetComponent<Rigidbody2D>().AddForce(force, (ForceMode2D)ForceMode.Impulse);
             }
