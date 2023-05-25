@@ -33,7 +33,7 @@ public class AI : MonoBehaviour
 
         AI_Chase = true;
 
-        transform.position = new Vector3(0.0f, -2.0f, 0.0f);
+        //transform.position = new Vector3(0.0f, -2.0f, 0.0f);
         SearchTimer = 10;
 
         Walking.Play();
