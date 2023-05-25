@@ -15276,7 +15276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &272884945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32884,6 +32884,11 @@ CircleCollider2D:
   m_Offset: {x: -0.055054188, y: 0}
   serializedVersion: 2
   m_Radius: 2.8187509
+--- !u!1 &1084214611 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8456469302166955980, guid: 1ea29a56377e18a42a933519b1796b8a, type: 3}
+  m_PrefabInstance: {fileID: 2054868242}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1084674930
 GameObject:
   m_ObjectHideFlags: 0
@@ -58036,6 +58041,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1304181274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8456469302166955980, guid: 1ea29a56377e18a42a933519b1796b8a, type: 3}
+  m_PrefabInstance: {fileID: 761347570}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1304181277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304181274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &1304338365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59274,11 +59300,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1815615874426262630, guid: 9b41b213e22337546b030031880cd03b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.3
+      value: -2.41
       objectReference: {fileID: 0}
     - target: {fileID: 1815615874426262630, guid: 9b41b213e22337546b030031880cd03b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.5
+      value: 51.5
       objectReference: {fileID: 0}
     - target: {fileID: 1815615874426262630, guid: 9b41b213e22337546b030031880cd03b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -63897,6 +63923,10 @@ PrefabInstance:
     - target: {fileID: 6740345223787834855, guid: 84775eb355fe7eb4694f2466af872f04, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 171
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740345223800140291, guid: 84775eb355fe7eb4694f2466af872f04, type: 3}
+      propertyPath: m_text
+      value: Exit
       objectReference: {fileID: 0}
     - target: {fileID: 6740345223800140291, guid: 84775eb355fe7eb4694f2466af872f04, type: 3}
       propertyPath: m_fontAsset
@@ -69671,6 +69701,10 @@ PrefabInstance:
       propertyPath: m_Texture
       value: 
       objectReference: {fileID: 2800000, guid: c42efe761edea0645810fa96a7022a79, type: 3}
+    - target: {fileID: 4873353730325830846, guid: 4f75ab58c6921eb4a8a8ae4e5b0e892e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5162675623161396076, guid: 4f75ab58c6921eb4a8a8ae4e5b0e892e, type: 3}
       propertyPath: m_Texture
       value: 
@@ -70383,6 +70417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndGameCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 9183437511455828664, guid: 06d5bbbbe9cc7e64a8752f56088dd823, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9183437511726965434, guid: 06d5bbbbe9cc7e64a8752f56088dd823, type: 3}
       propertyPath: m_fontSize
       value: 45
@@ -70393,7 +70431,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: e5dc12bc9b5861644937997924d0034b, type: 2}
     - target: {fileID: 9183437511726965434, guid: 06d5bbbbe9cc7e64a8752f56088dd823, type: 3}
       propertyPath: m_fontStyle
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9183437511726965434, guid: 06d5bbbbe9cc7e64a8752f56088dd823, type: 3}
       propertyPath: m_fontColor.b
@@ -70429,7 +70467,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: e5dc12bc9b5861644937997924d0034b, type: 2}
     - target: {fileID: 9183437512075582271, guid: 06d5bbbbe9cc7e64a8752f56088dd823, type: 3}
       propertyPath: m_fontStyle
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9183437512075582271, guid: 06d5bbbbe9cc7e64a8752f56088dd823, type: 3}
       propertyPath: m_fontColor.b
@@ -70514,6 +70552,14 @@ PrefabInstance:
     - target: {fileID: 1197147492957156676, guid: ad84222e9d5c78842ab9f3a9be1d535f, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3014540795982049914, guid: ad84222e9d5c78842ab9f3a9be1d535f, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3014540795982049914, guid: ad84222e9d5c78842ab9f3a9be1d535f, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7386157663864805624, guid: ad84222e9d5c78842ab9f3a9be1d535f, type: 3}
       propertyPath: m_Enabled
@@ -76929,6 +76975,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8456469302166955983, guid: 1ea29a56377e18a42a933519b1796b8a, type: 3}
   m_PrefabInstance: {fileID: 2054868242}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2054868246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084214611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &2065944399
 PrefabInstance:
   m_ObjectHideFlags: 0

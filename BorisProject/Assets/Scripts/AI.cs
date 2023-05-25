@@ -32,10 +32,7 @@ public class AI : MonoBehaviour
         AIrb = GameObject.Find("Monster").GetComponent<Rigidbody2D>();
 
         AI_Chase = true;
-
-        //transform.position = new Vector3(0.0f, -2.0f, 0.0f);
         SearchTimer = 10;
-
         Walking.Play();
     }
 
@@ -167,6 +164,7 @@ public class AI : MonoBehaviour
             dis = Vector3.Distance(NewLoc, Player_Obj.transform.position);
         }
 
+        AIrb.velocity = new Vector2(0,0);
         transform.position = NewLoc;
     }
 }

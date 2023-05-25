@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         maxStamina = 5.0f;
         stamina = maxStamina;
-        hp = 3;
+        hp = 2;
 
         PlayerWalking.Play();
         Breathing.Play();
@@ -214,7 +214,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.name == "Monster")
         {
             Vector2 dir = (collision.transform.position - transform.position).normalized;
-            Vector2 force = dir * 15;
+            Vector2 force = dir * 17;
 
             if (hp != 0)
             {
@@ -223,8 +223,8 @@ public class PlayerController : MonoBehaviour
                 UI.ChangePos();
                 GruntSound.Play();
 
-                PlayerRB.GetComponent<Rigidbody2D>().AddForce(force, (ForceMode2D)ForceMode.Impulse);
-                collision.gameObject.GetComponent<AI>().ChangeLocation();
+                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(force, (ForceMode2D)ForceMode.Impulse);
+                collision.gameObject.GetComponent<AI>().Invoke("ChangeLocation", 1);
             }
 
             else
@@ -244,7 +244,10 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.name == "Summon Trap")
         {
-            collision.gameObject.GetComponent<Trap>().ShowHint();
+            if(collision.gameObject.GetComponent<Trap>().primed == false)
+            {
+                collision.gameObject.GetComponent<Trap>().ShowHint();
+            }
         }
     }
 
