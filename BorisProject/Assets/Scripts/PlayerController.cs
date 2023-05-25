@@ -151,8 +151,8 @@ public class PlayerController : MonoBehaviour
         if (Sprint() && stamina > 0)
         {
             body.velocity = input.normalized * moveSpeed * 2;
-            stamina -= 1.0f / 60.0f;
-            Exhaust += 3.0f / 60.0f;
+            stamina -= 2.0f / 45.0f;
+            Exhaust += 4.0f / 45.0f;
         }
 
         //Walk and Increase Stamina
@@ -161,8 +161,8 @@ public class PlayerController : MonoBehaviour
             body.velocity = input.normalized * moveSpeed;
             if (!Sprint())
             {
-                stamina += 2.0f / 60.0f;
-                Exhaust -= 4.0f / 60.0f;
+                stamina += 3.0f / 45.0f;
+                Exhaust -= 5.0f / 45.0f;
             }
         }
 
