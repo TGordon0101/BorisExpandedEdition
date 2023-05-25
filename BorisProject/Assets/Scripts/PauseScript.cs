@@ -8,6 +8,7 @@ public class PauseScript : MonoBehaviour
     public GameObject resumeButton;
     public GameObject quitButton;
     public GameObject UI;
+    public GameObject transition;
     public bool paused;
 
     public void Start()
@@ -15,6 +16,7 @@ public class PauseScript : MonoBehaviour
         resumeButton = GameObject.Find("Resume");
         quitButton = GameObject.Find("Quit");
         UI = GameObject.Find("Menu");
+        transition = GameObject.Find("Transition Canvas");
 
         UI.SetActive(false);
     }
@@ -26,8 +28,8 @@ public class PauseScript : MonoBehaviour
             if(paused)
             {
                 ResumeGame();
-
             }
+
             else
             {
                 PauseGame();
@@ -49,9 +51,10 @@ public class PauseScript : MonoBehaviour
         paused = false;
     }
 
-    public void QuitGame()
+    public void RetryGame()
     {
         UI.SetActive(false);
-        SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
+        transition.GetComponent<Transition>().SetTrigger();
     }
 }

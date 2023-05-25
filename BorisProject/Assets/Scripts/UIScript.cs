@@ -9,6 +9,8 @@ public class UIScript : MonoBehaviour
     public GameObject YouLose_Obj;
     public GameObject Buttons_Obj;
 
+    public GameObject transition;
+
     void Start()
     {
         YouWin_Obj = GameObject.Find("You Win Text");
@@ -19,21 +21,29 @@ public class UIScript : MonoBehaviour
         YouWin_Obj.SetActive(false);
         YouLose_Obj.SetActive(false);
         Buttons_Obj.SetActive(false);
+
+        transition = GameObject.Find("Transition Canvas");
     }
 
     public void RetryGame()
     {
-        SceneManager.LoadScene(0);
+        transition.GetComponent<Transition>().LoadLevel(1);
     }
 
     public void ExitGame()
     {
-        Application.Quit();
+        transition.GetComponent<Transition>().SetTrigger();
     }
 
     public void YouLose()
     {
         YouLose_Obj.SetActive(true);
+        Buttons_Obj.SetActive(true);
+    }
+
+    public void YouWin()
+    {
+        YouWin_Obj.SetActive(true);
         Buttons_Obj.SetActive(true);
     }
 }

@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public Object itemTwo;
     [SerializeField] public Object itemThree;
 
+    [SerializeField] public Rigidbody2D PlayerRB;
+
     [SerializeField] public InventoryUI UI;
 
     public float moveSpeed;
@@ -49,6 +51,7 @@ public class PlayerController : MonoBehaviour
         PlayerWalking.pitch = 1.2f;
 
         UI = GameObject.Find("UI").GetComponent<InventoryUI>();
+        PlayerRB = GameObject.Find("Player").GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -211,16 +214,17 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.name == "Monster")
         {
             Vector2 dir = (collision.transform.position - transform.position).normalized;
-            Vector2 force = dir * 50;
+            Vector2 force = dir * 15;
 
             if (hp != 0)
             {
                 hp -= 1;
-
                 UI.Timer = 0.8f;
                 UI.ChangePos();
                 GruntSound.Play();
-                collision.gameObject.GetComponent<AI>().GetComponent<Rigidbody2D>().AddForce(force, (ForceMode2D)ForceMode.Impulse);
+
+                PlayerRB.GetComponent<Rigidbody2D>().AddForce(force, (ForceMode2D)ForceMode.Impulse);
+                collision.gameObject.GetComponent<AI>().ChangeLocation();
             }
 
             else

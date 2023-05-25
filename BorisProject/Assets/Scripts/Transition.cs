@@ -16,13 +16,21 @@ public class Transition : MonoBehaviour
     {
        if(Input.GetMouseButtonDown(0))
        {
-            //FadeIntoLevel(1);
+            
        }
     }
 
     private void Start()
     {
-        FadeBlack.color = new Color(255, 255, 255, 0);
+        FadeBlack = GameObject.Find("BlackFade").GetComponent<Image>();
+        //if(FadeBlack != null ) {
+            FadeBlack.color = new Color(255, 255, 255, 0);
+       // }
+        
+        if (FadeBlack.color.a <= 0)
+        {
+            FadeBlack.color = new Color(255, 255, 255, 0);
+        }
     }
 
     public void FadeIntoLevel(int _levelIndex)
@@ -50,5 +58,15 @@ public class Transition : MonoBehaviour
         //MenuMuic.volume = startVolume;
 
         MenuClick.Play();
+    }
+
+    public void SetTrigger()
+    {
+        animator.SetTrigger("FadeOut");
+    }
+
+    public void LoadLevel(int x)
+    {
+        FadeIntoLevel(x);
     }
 }

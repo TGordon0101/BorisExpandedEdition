@@ -23,8 +23,6 @@ public class AI : MonoBehaviour
     public float SearchTimer;
     public bool SneerTime = false;
 
-    // public AudioSource SoundEffect;
-
     void Start()
     {
         Monster_AI_Mesh = GetComponent<NavMeshAgent>();
@@ -35,7 +33,6 @@ public class AI : MonoBehaviour
 
         AI_Chase = true;
 
-        //SoundEffect = GetComponent<AudioSource>();
         transform.position = new Vector3(0.0f, -2.0f, 0.0f);
         SearchTimer = 10;
 
@@ -58,17 +55,18 @@ public class AI : MonoBehaviour
                
                 Search();
             }
+
             else if (Distance < 25.0f)
             {
                 SearchTimer = 10;
                 ChasePlayer();
                 SneerTime = false;
             }
+
             else
             {
                 Walking.Pause();
                 AI_Animation.SetFloat("Speed", 0.0f);
-                //PlaySound();
             }
 
             if (SearchTimer == 0.0f)
@@ -99,7 +97,6 @@ public class AI : MonoBehaviour
 
     public void PlaySound()
     {
-        //SoundEffect.Play();
     }
 
     private void ChasePlayer()
@@ -157,5 +154,19 @@ public class AI : MonoBehaviour
     public void EndGame()
     {
         TrapObj.GetComponent<Trap>().endGame = true;
+    }
+
+    public void ChangeLocation()
+    {
+        Vector3 NewLoc = Locations_List.GetLocation().position;
+        float dis = Vector3.Distance(NewLoc, Player_Obj.transform.position);
+
+        while (dis <= 40f)
+        {
+            NewLoc = Locations_List.GetLocation().position;
+            dis = Vector3.Distance(NewLoc, Player_Obj.transform.position);
+        }
+
+        transform.position = NewLoc;
     }
 }

@@ -40,7 +40,6 @@ public class GameManager : MonoBehaviour
             UI_obj.Buttons_Obj.SetActive(true);
 
             AI_Script_Obj.SetBoolChase(false);
-            Time.timeScale = 0f;
         }
 
         if (Player_Obj.GetComponent<PlayerController>().b_playerDead == true)

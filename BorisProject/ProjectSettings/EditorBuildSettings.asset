@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/SCENES/Game/Main_Menu.unity
     guid: f047ace7dfad465498f6d73e263c5749
   - enabled: 1
+    path: Assets/SCENES/Tay/Test.unity
+    guid: 5e0423e4cbc375d4b9466a3df91f7af7
+  - enabled: 0
     path: Assets/SCENES/Jae/Test_Jae.unity
     guid: 0a049cbb283210d4381469146faf2511
   - enabled: 0
